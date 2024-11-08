@@ -31,9 +31,11 @@ struct LandingView: View {
                     Text("Stopwatch")
                 }
                 .tag(3)
- 
+            
         }
-        .padding()
+        .tint(.orange)
+        .preferredColorScheme(.dark)
+
     }
 }
 
