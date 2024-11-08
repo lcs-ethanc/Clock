@@ -10,34 +10,37 @@ import SwiftUI
 struct WorldClockView: View {
     var body: some View {
         NavigationStack{
-            Text("World Clock")
-                .navigationTitle("World Clock")
-                .toolbar {
+            VStack{
+                Text("World Clock")
+            }
+            .navigationTitle("World Clock")
+            .toolbar {
+                
+                ToolbarItem(placement: .topBarLeading) {
                     
-                    ToolbarItem(placement: .topBarLeading) {
-                        
-                        Button("Edit") {
-                            // Does nothing right now
-                        }
-                        
+                    Button("Edit") {
+                        // Does nothing right now
                     }
                     
+                }
+                
+                ToolbarItem(placement: .primaryAction) {
                     
-                    
-                    ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        // Does nothing right now
                         
-                        Button {
-                            // Does nothing right now
-                            
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                        
+                    } label: {
+                        Image(systemName: "plus")
                     }
+                    
                 }
-                }
+            }
+            
+            
+            
         }
     }
+}
 
 
 #Preview {
