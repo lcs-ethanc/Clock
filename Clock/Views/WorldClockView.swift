@@ -11,8 +11,29 @@ struct WorldClockView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                Text("World Clock")
+                HStack{
+                    
+                    VStack(alignment: .leading){
+                        Text("Today, 0+ hours")
+                            .font(.system(size: 15))
+                            .foregroundColor(.gray)
+                        Text("Ottawa")
+                            .font(.system(size: 30))
+                    }
+                    Spacer()
+                    
+                    HStack(alignment: .firstTextBaseline){
+                        Text("6:35")
+                            .fontWeight(.thin)
+                            .font(.system(size: 60))
+                        Text("AM")
+                            .fontWeight(.thin)
+                            .font(.system(size: 40))
+                    }
+                    
+                }
             }
+            
             .navigationTitle("World Clock")
             .toolbar {
                 
@@ -37,7 +58,7 @@ struct WorldClockView: View {
             }
             
             
-            
+            .padding()
         }
     }
 }
