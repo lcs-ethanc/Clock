@@ -11,28 +11,7 @@ struct WorldClockView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                HStack{
-                    
-                    VStack(alignment: .leading){
-                        Text("Today, +0HRS")
-                            .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                        Text("Ottawa")
-                            .font(.system(size: 30))
-                    }
-                    Spacer()
-                    
-                    HStack(alignment: .firstTextBaseline){
-                        Text("6:35")
-                            .fontWeight(.thin)
-                            .font(.system(size: 60))
-                        Text("AM")
-                            .fontWeight(.thin)
-                            .font(.system(size: 40))
-                    }
-                    
-                }
-                .padding(.bottom,0.5)
+                ExtractedView(timeZoneDiff: "Today, +0HRS", city: "Ottawa", time: "6:35", APM: "AM")
                 HStack{
                     
                     VStack(alignment: .leading){
@@ -178,4 +157,37 @@ struct WorldClockView: View {
 
 #Preview {
     LandingView()
+}
+
+struct ExtractedView: View {
+    let timeZoneDiff: String
+    let city: String
+    let time: String
+    let APM: String
+    
+    var body: some View {
+ 
+        HStack{
+            
+            VStack(alignment: .leading){
+                Text("\(timeZoneDiff)")
+                    .font(.system(size: 15))
+                    .foregroundColor(.gray)
+                Text("\(city)")
+                    .font(.system(size: 30))
+            }
+            Spacer()
+            
+            HStack(alignment: .firstTextBaseline){
+                Text("\(time)")
+                    .fontWeight(.thin)
+                    .font(.system(size: 60))
+                Text("\(APM)")
+                    .fontWeight(.thin)
+                    .font(.system(size: 40))
+            }
+            
+        }
+        .padding(.bottom,0.5)
+    }
 }
