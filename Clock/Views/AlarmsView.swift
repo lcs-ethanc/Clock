@@ -15,16 +15,37 @@ struct AlarmsView: View {
                 Image(systemName: "bed.double.fill")
                 Text("Sleep I Wake Up")
                     .fontWeight(.semibold)
-                    .font(.system(size:15))
+                    .font(.system(size:20))
                 Spacer()
             }
-            
             .padding(.leading,15) //matches x position of h stack to alarms
-            .padding(.top,15) //space on top
+            .padding(.top,5) //space on top
+            HStack{
+                Text("No Alarm")
+                    .foregroundColor(.gray)
+                Spacer()
+                Text("SET UP")
+                    .foregroundColor(.orange) //text color
+                    .padding(7) //adds padding around text
+                    .background(Color.gray.opacity(0.4)) //colors the padding and background, opacity makes it darker
+                    .cornerRadius(20) //rounds the corner
+                    .padding(5)
+            }
+            .padding(.leading,15) //matches x position of h stack to alarms
+            .padding(.top,5) //space on top
+
 
             VStack{
-                AlarmView(timeZoneDiff: "Today, +0HRS", city: "Ottawa", time: "6:35", APM: "AM")
-                
+                HStack{
+                    Text("Other")
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                .padding(.bottom,0.2)
+                AlarmView(time: "6:35", APM: "AM")
+                AlarmView(time: "8:15", APM: "AM")
+                AlarmView(time: "9:00", APM: "AM")
+                AlarmView(time: "9:15", APM: "AM")
                 Spacer()
             }
             
@@ -61,8 +82,6 @@ struct AlarmsView: View {
 
 
 struct AlarmView: View {
-    let timeZoneDiff: String
-    let city: String
     let time: String
     let APM: String
     
@@ -81,12 +100,12 @@ struct AlarmView: View {
                 }
                 Text("Alarm")
                     .font(.system(size: 15))
-                    .foregroundColor(.gray)
+ 
             }
             Spacer()
             
             Image(systemName: "switch.2")
-                .font(.system(size:20))
+                .font(.system(size:30))
 
 
             
