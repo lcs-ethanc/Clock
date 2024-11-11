@@ -71,22 +71,25 @@ struct AlarmView: View {
         HStack{
             
             VStack(alignment: .leading){
-                Text("\(timeZoneDiff)")
+                HStack(alignment: .firstTextBaseline, spacing:4){// Spacing controls amount of space between elements in H Stack, firsttextbaseline makes all of them vertically aligned with the first text
+                    Text("\(time)")
+                        .fontWeight(.light)
+                        .font(.system(size: 40))
+                    Text("\(APM)")
+                        .fontWeight(.light)
+                        .font(.system(size: 25))
+                }
+                Text("Alarm")
                     .font(.system(size: 15))
                     .foregroundColor(.gray)
-                Text("\(city)")
-                    .font(.system(size: 30))
             }
             Spacer()
             
-            HStack(alignment: .firstTextBaseline){
-                Text("\(time)")
-                    .fontWeight(.thin)
-                    .font(.system(size: 60))
-                Text("\(APM)")
-                    .fontWeight(.thin)
-                    .font(.system(size: 40))
-            }
+            Image(systemName: "switch.2")
+                .font(.system(size:20))
+
+
+            
             
         }
         .padding(.bottom,0.5)
