@@ -11,12 +11,19 @@ struct WorldClockView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                ExtractedView(timeZoneDiff: "Today, +0HRS", city: "Ottawa", time: "6:35", APM: "AM")
-                ExtractedView(timeZoneDiff: "Today, -3HRS", city: "Vancouver", time: "3:35", APM: "AM")
-                ExtractedView(timeZoneDiff: "Today, +6HRS", city: "Hamburg", time: "12:35", APM: "PM")
-                ExtractedView(timeZoneDiff: "Today, +16HRS", city: "Sydney", time: "10:35", APM: "PM")
-                ExtractedView(timeZoneDiff: "Today, +9HRS", city: "Dubai", time: "3:35", APM: "PM")
-                ExtractedView(timeZoneDiff: "Today, -1HRS", city: "Mexico City", time: "5:35", APM: "AM")
+                Divider()
+                TimeZoneView(timeZoneDiff: "Today, +0HRS", city: "Ottawa", time: "6:35", APM: "AM")
+                Divider()
+                TimeZoneView(timeZoneDiff: "Today, -3HRS", city: "Vancouver", time: "3:35", APM: "AM")
+                Divider()
+                TimeZoneView(timeZoneDiff: "Today, +6HRS", city: "Hamburg", time: "12:35", APM: "PM")
+                Divider()
+                TimeZoneView(timeZoneDiff: "Today, +16HRS", city: "Sydney", time: "10:35", APM: "PM")
+                Divider() //thin grey line
+                TimeZoneView(timeZoneDiff: "Today, +9HRS", city: "Dubai", time: "3:35", APM: "PM")
+                Divider()
+                TimeZoneView(timeZoneDiff: "Today, -1HRS", city: "Mexico City", time: "5:35", APM: "AM")
+                Divider()
                 
                 Spacer()
             }
@@ -55,7 +62,7 @@ struct WorldClockView: View {
     LandingView()
 }
 
-struct ExtractedView: View {
+struct TimeZoneView: View {
     let timeZoneDiff: String
     let city: String
     let time: String

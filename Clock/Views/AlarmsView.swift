@@ -10,6 +10,7 @@ import SwiftUI
 struct AlarmsView: View {
     var body: some View {
         NavigationStack{
+            Divider()
             HStack{
                 Image(systemName: "bed.double.fill")
                 Text("Sleep I Wake Up")
@@ -17,81 +18,18 @@ struct AlarmsView: View {
                     .font(.system(size:15))
                 Spacer()
             }
+            
             .padding(.leading,15) //matches x position of h stack to alarms
             .padding(.top,15) //space on top
 
             VStack{
-                ExtractedView(timeZoneDiff: "Today, +0HRS", city: "Ottawa", time: "6:35", APM: "AM")
-                HStack{
-                    
-                    VStack(alignment: .leading){
-                        Text("Today, -3HRS")
-                            .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                        Text("Vancouver")
-                            .font(.system(size: 30))
-                    }
-                    Spacer()
-                    
-                    HStack(alignment: .firstTextBaseline){
-                        Text("3:35")
-                            .fontWeight(.thin) //weight of font
-                            .font(.system(size: 60)) //size of font
-                        Text("AM")
-                            .fontWeight(.thin)
-                            .font(.system(size: 40))
-                    }
-                    
-                }
-                .padding(.bottom,0.5)
-                HStack{
-                    
-                    VStack(alignment: .leading){
-                        Text("Today, +6HRS")
-                            .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                        Text("Hamburg")
-                            .font(.system(size: 30))
-                    }
-                    Spacer()
-                    
-                    HStack(alignment: .firstTextBaseline){
-                        Text("12:35")
-                            .fontWeight(.thin)
-                            .font(.system(size: 60))
-                        Text("PM")
-                            .fontWeight(.thin)
-                            .font(.system(size: 40))
-                    }
-                    
-                }
-                .padding(.bottom,0.5)
-                HStack{
-                    
-                    VStack(alignment: .leading){
-                        Text("Today, -1HRS")
-                            .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                        Text("Mexico City")
-                            .font(.system(size: 30))
-                    }
-                    Spacer()
-                    
-                    HStack(alignment: .firstTextBaseline){
-                        Text("5:35")
-                            .fontWeight(.thin)
-                            .font(.system(size: 60))
-                        Text("AM")
-                            .fontWeight(.thin)
-                            .font(.system(size: 40))
-                    }
-                    
-                }
-                .padding(.bottom,0.5)
+                AlarmView(timeZoneDiff: "Today, +0HRS", city: "Ottawa", time: "6:35", APM: "AM")
+                
                 Spacer()
             }
             
             .navigationTitle("Alarms")
+            
 
             .toolbar {
                 
@@ -122,6 +60,38 @@ struct AlarmsView: View {
 }
 
 
+struct AlarmView: View {
+    let timeZoneDiff: String
+    let city: String
+    let time: String
+    let APM: String
+    
+    var body: some View {
+ 
+        HStack{
+            
+            VStack(alignment: .leading){
+                Text("\(timeZoneDiff)")
+                    .font(.system(size: 15))
+                    .foregroundColor(.gray)
+                Text("\(city)")
+                    .font(.system(size: 30))
+            }
+            Spacer()
+            
+            HStack(alignment: .firstTextBaseline){
+                Text("\(time)")
+                    .fontWeight(.thin)
+                    .font(.system(size: 60))
+                Text("\(APM)")
+                    .fontWeight(.thin)
+                    .font(.system(size: 40))
+            }
+            
+        }
+        .padding(.bottom,0.5)
+    }
+}
 #Preview {
     LandingView()
 }
