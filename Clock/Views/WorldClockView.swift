@@ -12,116 +12,12 @@ struct WorldClockView: View {
         NavigationStack{
             VStack{
                 ExtractedView(timeZoneDiff: "Today, +0HRS", city: "Ottawa", time: "6:35", APM: "AM")
-                HStack{
-                    
-                    VStack(alignment: .leading){
-                        Text("Today, -3HRS")
-                            .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                        Text("Vancouver")
-                            .font(.system(size: 30))
-                    }
-                    Spacer()
-                    
-                    HStack(alignment: .firstTextBaseline){
-                        Text("3:35")
-                            .fontWeight(.thin)
-                            .font(.system(size: 60))
-                        Text("AM")
-                            .fontWeight(.thin)
-                            .font(.system(size: 40))
-                    }
-                    
-                }
-                .padding(.bottom,0.5)
-                HStack{
-                    
-                    VStack(alignment: .leading){
-                        Text("Today, +6HRS")
-                            .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                        Text("Hamburg")
-                            .font(.system(size: 30))
-                    }
-                    Spacer()
-                    
-                    HStack(alignment: .firstTextBaseline){
-                        Text("12:35")
-                            .fontWeight(.thin)
-                            .font(.system(size: 60))
-                        Text("PM")
-                            .fontWeight(.thin)
-                            .font(.system(size: 40))
-                    }
-                    
-                }
-                .padding(.bottom,0.5)
-                HStack{
-                    
-                    VStack(alignment: .leading){
-                        Text("Today, +16HRS")
-                            .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                        Text("Sydney")
-                            .font(.system(size: 30))
-                    }
-                    Spacer()
-                    
-                    HStack(alignment: .firstTextBaseline){
-                        Text("10:35")
-                            .fontWeight(.thin)
-                            .font(.system(size: 60))
-                        Text("PM")
-                            .fontWeight(.thin)
-                            .font(.system(size: 40))
-                    }
-                    
-                }
-                .padding(.bottom,0.5)
-                HStack{
-                    
-                    VStack(alignment: .leading){
-                        Text("Today, +9HRS")
-                            .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                        Text("Dubai")
-                            .font(.system(size: 30))
-                    }
-                    Spacer()
-                    
-                    HStack(alignment: .firstTextBaseline){
-                        Text("3:35")
-                            .fontWeight(.thin)
-                            .font(.system(size: 60))
-                        Text("PM")
-                            .fontWeight(.thin)
-                            .font(.system(size: 40))
-                    }
-                    
-                }
-                .padding(.bottom,0.5)
-                HStack{
-                    
-                    VStack(alignment: .leading){
-                        Text("Today, -1HRS")
-                            .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                        Text("Mexico City")
-                            .font(.system(size: 30))
-                    }
-                    Spacer()
-                    
-                    HStack(alignment: .firstTextBaseline){
-                        Text("5:35")
-                            .fontWeight(.thin)
-                            .font(.system(size: 60))
-                        Text("AM")
-                            .fontWeight(.thin)
-                            .font(.system(size: 40))
-                    }
-                    
-                }
-                .padding(.bottom,0.5)
+                ExtractedView(timeZoneDiff: "Today, -3HRS", city: "Vancouver", time: "3:35", APM: "AM")
+                ExtractedView(timeZoneDiff: "Today, +6HRS", city: "Hamburg", time: "12:35", APM: "PM")
+                ExtractedView(timeZoneDiff: "Today, +16HRS", city: "Sydney", time: "10:35", APM: "PM")
+                ExtractedView(timeZoneDiff: "Today, +9HRS", city: "Dubai", time: "3:35", APM: "PM")
+                ExtractedView(timeZoneDiff: "Today, -1HRS", city: "Mexico City", time: "5:35", APM: "AM")
+                
                 Spacer()
             }
             
